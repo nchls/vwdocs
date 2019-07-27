@@ -1,4 +1,7 @@
 *.db
+passenger_wsgi.py
+tmp/
+.htaccess
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
