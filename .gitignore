@@ -1,5 +1,4 @@
 *.db
-passenger_wsgi.py
 tmp/
 .htaccess
 
