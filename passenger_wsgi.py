@@ -11,5 +11,3 @@ def application(environ, start_response):
 	content_type, response_code, body = handle_request(environ)
 	start_response(response_code, [('Content-Type', content_type)])
 	return [response.encode()]
-
-import os_wsgi.py
