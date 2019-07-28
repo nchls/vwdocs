@@ -5,12 +5,8 @@ from flask import Flask, render_template
 
 App = Flask(__name__)
 
-@App.route('/')
-def index():
-	return render_template('index.html')
-
 @App.route('/api/toc')
-def toc():
+def api_toc():
 	toc_sql = 'select id, parentid, name from docs'
 	cur = get_cursor()
 	cur.execute(toc_sql)
@@ -22,7 +18,7 @@ def toc():
 	return response
 
 @App.route('/api/page/<page_id>')
-def page(page_id):
+def api_page(page_id):
 	page_sql = 'select name, content, parentid from docs where id = ?'
 	cur = get_cursor()
 	cur.execute(page_sql, (page_id,))
@@ -34,6 +30,14 @@ def page(page_id):
 	}
 	response = json_response(result)
 	return response
+
+@App.route('/')
+def index():
+	return render_template('index.html')
+
+@App.route('/<path:pg>')
+def page(pg):
+	return render_template('index.html')
 
 def get_cursor():
 	conn = sqlite3.connect('docs.db')
