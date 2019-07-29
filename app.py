@@ -19,14 +19,13 @@ def api_toc():
 
 @App.route('/api/page/<page_id>')
 def api_page(page_id):
-	page_sql = 'select name, content, parentid from docs where id = ?'
+	page_sql = 'select name, content from docs where id = ?'
 	cur = get_cursor()
 	cur.execute(page_sql, (page_id,))
 	name, content, parent_id = cur.fetchone()
 	result = {
 		'name': name,
 		'content': content,
-		'parent_id': parent_id,
 	}
 	response = json_response(result)
 	return response
@@ -43,6 +42,7 @@ def get_cursor():
 	conn = sqlite3.connect('docs.db')
 	cur = conn.cursor()
 	return cur
+
 
 def generate_toc(pages):
 	index = next(page for page in pages if page[0] == 'ASGR_ROOT')
