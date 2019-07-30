@@ -22,7 +22,7 @@ def api_page(page_id):
 	page_sql = 'select name, content from docs where id = ?'
 	cur = get_cursor()
 	cur.execute(page_sql, (page_id,))
-	name, content, parent_id = cur.fetchone()
+	name, content = cur.fetchone()
 	result = {
 		'name': name,
 		'content': content,

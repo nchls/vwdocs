@@ -1,34 +1,6 @@
-let toc;
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const elements = {
-	'toc': document.getElementsByClassName('toc')[0],
-	'content': document.getElementsByClassName('main')[0]
-};
+import App from './components/App';
 
-const init = () => {
-	getToc()
-		.then((gotToc) => {
-			toc = gotToc;
-			console.log(toc);
-		});
-};
-
-const getToc = () => {
-	return new Promise((resolve, reject) => {
-		fetch('/api/toc')
-			.then((response) => {
-				if (response.ok) {
-					resolve(response.json());
-				} else {
-					reject(response);
-				}
-			});
-	});
-};
-
-const renderToc = () => {
-
-};
-
-init();
-
+ReactDOM.render(<App/>, document.getElementById('app'));

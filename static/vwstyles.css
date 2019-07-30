@@ -1,0 +1,39 @@
+/* colors_start */
+/* colors_end */
+/* Responsive boundaries, mobile first approach:
+// mobile width   s:  width  <   768 px
+// tablet width   m:  width  >=  768 px && < 1024
+// desktop width  l:  width  >=  1024 px
+*/
+/**********************************/
+/* Geometry definitions ________- */
+/**********************************/
+/* Fixed left side nav ________- */
+/* Intro ________- */
+/* VIN form ________- */
+/* Main content ________- */
+/* Right content nav ________- */
+/* Footer ________- */
+/* nav icons ________- */
+/* media_start */
+/* iPads (landscape) __________- */@media only screen and (min-width:768px) and (max-width:992px) and (orientation:landscape){
+  /* Styles */}
+
+/* iPads (portrait) __________- */@media only screen and (min-width:768px) and (max-width:992px) and (orientation:portrait){
+  /* Styles */}
+
+/* Notebooks / Desktops __________- */@media only screen and (min-width:992px){
+  /* Styles */}
+
+/* media_end */body,html{font-size:62.5%;line-height:1.8rem;width:100%;height:100%;min-height:480px;min-width:320px}body{box-sizing:border-box;background:#f1f5f6;color:#222;padding:0;margin:0;font-family:VWHeadlineOT-Book,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;font-weight:400;font-style:normal;position:relative;cursor:auto}h1{font-size:5.2rem}h1,h2{font-family:VWHeadlineOT-Black;color:#000;text-align:center}h2{font-size:3.2rem}h3{font-size:2.5rem;color:#fff}h3,h4{font-family:VWHeadlineOT-Black;text-align:center}h4{font-size:1.8rem;color:#000}h1,h2,h3,h4,h5,h6{font-family:VWHeadlineOT-Black;font-weight:400;font-style:normal}a.isBlack,h1.isBlack,h2.isBlack,h3.isBlack,h4.isBlack,h5.isBlack,h6.isBlack,p.isBlack,span.isBlack{color:#000}a.isWhite,h1.isWhite,h2.isWhite,h3.isWhite,h4.isWhite,h5.isWhite,h6.isWhite,p.isWhite,span.isWhite{color:#fff}a.isGrey,h1.isGrey,h2.isGrey,h3.isGrey,h4.isGrey,h5.isGrey,h6.isGrey,p.isGrey,span.isGrey{color:#84979d}a.isIntro,h1.isIntro,h2.isIntro,h3.isIntro,h4.isIntro,h5.isIntro,h6.isIntro,p.isIntro,span.isIntro{font-size:1.8rem;line-height:1.8}a.isLight,h1.isLight,h2.isLight,h3.isLight,h4.isLight,h5.isLight,h6.isLight,p.isLight,span.isLight{opacity:.6}a.isLight.isBigger,h1.isLight.isBigger,h2.isLight.isBigger,h3.isLight.isBigger,h4.isLight.isBigger,h5.isLight.isBigger,h6.isLight.isBigger,p.isLight.isBigger,span.isLight.isBigger{line-height:2.2;margin-bottom:-.2rem;position:relative;top:.5rem;font-size:2rem}div.isLightBlue{background:#02a3de;color:#fff}div.isLightBlue .button{background:#00688e}div.isGrey{background:#f1f5f6}div.isBlue{background:#00b0ee;color:#fff}div.isOrange{color:#eb6300}div.isWhite{background:#fff;color:#000}div.isGrey2{background:#e2ebed}div.isGrey3{background:#e3ebec}.isGrey{color:#84979d}h1.isSubline,h2.isSubline,h3.isSubline,h4.isSubline,h5.isSubline,h6.isSubline,strong.isSubline{font-size:3rem}small{font-size:1.6rem;color:#84979d}.hidden{display:none!important}.page{background:#cceaf8}.page h1{margin:0}.container-fluid{padding-right:0;padding-left:0}.fill-height{min-height:100%;height:auto!important;
+  /* cross-browser */height:100%
+  /* cross-browser */}.roundBorder{display:inline-block;padding:1rem 1.5rem;border:.1rem solid hsla(0,0%,100%,.6);border-radius:.5rem}.roundBorder strong{font-family:VWHeadlineOT-Book}.icon.icon-logout{background:url(/assets/images/spritesheet.png) 0 -20.4rem;width:1.3rem;height:1.3rem}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.icon.icon-logout{background-image:url(/assets/images/spritesheet-2x.png);background-size:3.9rem 161.7rem}}.icon.icon-print{background:url(/assets/images/spritesheet.png) 0 -41.7rem;width:1.4rem;height:1.4rem}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.icon.icon-print{background-image:url(/assets/images/spritesheet-2x.png);background-size:3.9rem 161.7rem}}.icon.icon-info-white{background:url(/assets/images/spritesheet.png) 0 -36.3rem;width:1.4rem;height:1.4rem}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.icon.icon-info-white{background-image:url(/assets/images/spritesheet-2x.png);background-size:3.9rem 161.7rem}}.icon.icon-info{background:url(/assets/images/spritesheet.png) 0 -71rem;width:2rem;height:2rem}@media (-webkit-min-device-pixel-ratio:2),(min-resolution:192dpi){.icon.icon-info{background-image:url(/assets/images/spritesheet-2x.png);background-size:3.9rem 161.7rem}}.isBlue.isCarBG{
+  /*background-size:contain;*/
+  /*background: #00b0ee url() no-repeat;*/background-color:#00b1eb;background-size:cover}.alt-grid [class*=col-]{padding-left:0;padding-right:0}.alt-grid .row{margin-left:0;margin-right:0}
+
+/* container adjusted */.alt-grid .container{width:100%;max-width:none;padding:0}.radius{border-radius:.4rem}.nav-box{background:#fff;box-shadow:.5rem 0 3rem 0 rgba(0,0,0,.15)}.btn-primary{cursor:pointer;font-weight:400;margin:0 0 2rem;position:relative;text-decoration:none;-webkit-appearance:none;-webkit-border-radius:0;display:inline-block;
+  /*padding: 0.625rem 1.25rem 0.6875rem;*/background-color:#00b0ee;border:0 solid #008dbe;transition:background-color .3s ease-out;border-radius:.4rem;font-family:VWHeadlineOT-Black;font-size:1.6rem;color:#fff;line-height:2.2rem;text-align:left}.highlighted{color:#eb6300}
+
+/*tree styling*/.tree{font-family:VWHeadlineOT-Book;color:#87979e;font-size:1.2rem;line-height:1.2rem;text-align:left;font-weight:400}.contentTreeNode{font-family:VWHeadlineOT-Book}.contentTreeNode,.tree-node-level-1{font-size:1.2rem;line-height:3.4rem;text-align:left;color:#89989e}.tree-node-level-1{font-family:VWHeadlineOT-Black}.tree-node-level-2{font-family:VWHeadlineOT-Semibold;line-height:3.4rem}.tree-node-level-,.tree-node-level-2{font-size:1.2rem;color:#89989e;text-align:left}.tree-node-level-{font-family:VWHeadlineOT-Book;line-height:1.2rem}.contentTreeNode>.tree-node-focused,.tree-node-active,.tree-node-active.tree-node-focused>.node-wrapper>.node-content-wrapper>tree-node-content,.tree-node-expanded,.tree-node-expanded>.node-wrapper>.node-content-wrapper>tree-node-content{color:#01b1ea;font-weight:700}.toggle-children-wrapper{display:none}.node-content-wrapper{background:none!important;box-shadow:none!important}.image-wrapper{max-width:100%;height:auto}
+
+/* globals_end */
