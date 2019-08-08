@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 
-const Toc = () => {
+const Toc = ({ location }) => {
 	const [tocFetchState, setTocFetchState] = useState('NOT_FETCHED');
 	const [toc, setToc] = useState(null);
 
@@ -15,25 +15,31 @@ const Toc = () => {
 		});
 	}
 
+	const pathName = location.pathname;
+	const pageId = pathName.substring(1);
+
 	return (
 		<nav className="toc">
 			{ toc && (
 				<ol>
-					<TocItem key={toc.id} {...toc} />
+					<TocItem key={toc.id} currentPageId={pageId} {...toc} />
 				</ol>
 			) }
 		</nav>
 	);
 };
 
-const TocItem = (item) => {
+const TocItem = ({ id, name, children, currentPageId }) => {
+
+	const shouldShowChildren = (children && (id === 'ASGR_ROOT' || currentPageId.startsWith(id)));
+
 	return (
 		<li>
-			<Link to={`/${item.id}`}>{item.name}</Link>
-			{ item.children && (
+			<Link to={`/${id}`}>{name}</Link>
+			{ shouldShowChildren && (
 				<ol>
-					{ item.children.map((child) => {
-						return <TocItem key={child.id} {...child} />;
+					{ children.map((child) => {
+						return <TocItem key={child.id} currentPageId={currentPageId} {...child} />;
 					} ) }
 				</ol>
 			) }
@@ -54,4 +60,4 @@ const getToc = () => {
 	});
 };
 
-export default Toc;
+export default withRouter(Toc);

@@ -6,11 +6,14 @@ const Page = ({ match }) => {
 
 	const [pageFetchState, setPageFetchState] = useState('NOT_FETCHED');
 	const [page, setPage] = useState(null);
+	const [fetchedPageId, setFetchedPageId] = useState(null);
 
-	if (pageFetchState === 'NOT_FETCHED') {
+	if (pageFetchState === 'NOT_FETCHED' || pageId !== fetchedPageId) {
 		setPageFetchState('FETCHING');
+		setFetchedPageId(pageId);
 		getPage(pageId).then((pageResponse) => {
 			setPage(pageResponse);
+			setPageFetchState('FETCHED');
 		}).catch(() => {
 			setPageFetchState('FAILED');
 		});

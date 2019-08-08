@@ -140,11 +140,14 @@ const Page = ({
   const pageId = match.params.pageId;
   const [pageFetchState, setPageFetchState] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('NOT_FETCHED');
   const [page, setPage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const [fetchedPageId, setFetchedPageId] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
 
-  if (pageFetchState === 'NOT_FETCHED') {
+  if (pageFetchState === 'NOT_FETCHED' || pageId !== fetchedPageId) {
     setPageFetchState('FETCHING');
+    setFetchedPageId(pageId);
     getPage(pageId).then(pageResponse => {
       setPage(pageResponse);
+      setPageFetchState('FETCHED');
     }).catch(() => {
       setPageFetchState('FAILED');
     });
@@ -195,7 +198,9 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-const Toc = () => {
+const Toc = ({
+  location
+}) => {
   const [tocFetchState, setTocFetchState] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('NOT_FETCHED');
   const [toc, setToc] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
 
@@ -208,19 +213,29 @@ const Toc = () => {
     });
   }
 
+  const pathName = location.pathname;
+  const pageId = pathName.substring(1);
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "toc"
   }, toc && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TocItem, _extends({
-    key: toc.id
+    key: toc.id,
+    currentPageId: pageId
   }, toc))));
 };
 
-const TocItem = item => {
+const TocItem = ({
+  id,
+  name,
+  children,
+  currentPageId
+}) => {
+  const shouldShowChildren = children && (id === 'ASGR_ROOT' || currentPageId.startsWith(id));
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: `/${item.id}`
-  }, item.name), item.children && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, item.children.map(child => {
+    to: `/${id}`
+  }, name), shouldShowChildren && react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ol", null, children.map(child => {
     return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(TocItem, _extends({
-      key: child.id
+      key: child.id,
+      currentPageId: currentPageId
     }, child));
   })));
 };
@@ -237,7 +252,7 @@ const getToc = () => {
   });
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Toc);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(Toc));
 
 /***/ }),
 
@@ -24531,7 +24546,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, generatePath, matchPath, withRouter, __RouterContext, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
